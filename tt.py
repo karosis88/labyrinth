@@ -31,24 +31,16 @@ while points:
 while T:	
 	j = random.randint(0, len(matrix)-1)
 	i = random.randint(0, len(matrix[0])-1)
-	if (matrix[j][i] == 'x') and j >=1 and i >=1:
-
-		try:
-			if matrix[j-1][i] and matrix[j+1][i] == ' ':
+	csum = (( (-1, 0), (1,0) ), ((0, -1), (0, 1)))
+	if (matrix[j][i] == 'x') and j >= 1 and i >= 1:
+		for k in range(len(csum)):
+			ji, si = csum[k]
+			if matrix[j+ji[0]][i+si[0]] and matrix[j+ji[0]][i+si[0]] == ' ':
 				T-=1
 				matrix[j][i] = ' '
-		except: pass
-		try:
-			if matrix[j][i-1] and matrix[j][i+1] == ' ':
-				T-=1
-				matrix[j][i] = ' '
-		except: pass
-
-
-
-
 
 [print(*i) for i in matrix]
+input()
 
 
 

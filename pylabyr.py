@@ -30,16 +30,10 @@ T = (WIDTH+HEIGHT) // 2
 WAYS = ( (1, 0), (0, 1), (-1, 0), (0, -1) )
 BACKGROUND_COLOR = (60,54,79)
 
-WALLS_COLOR = (105,145,92)
 WALLS_COLOR = (243, 80, 46)
-# BACKGROUND_COLOR = ()
-WALL_3D_COLOR = (66,94,60)
 WALL_3D_COLOR = (141, 33, 10)
-START_POINT_COLOR = (0, 0, 200)
 START_POINT_COLOR = (255, 195, 0)
-END_POINT_COLOR = (200, 0, 0)
 END_POINT_COLOR = (39, 174, 96)
-ROUTE_COLOR = (255, 255, 255)
 ROUTE_COLOR = (218, 247, 166)
 screen = pygame.display.set_mode((WIDTH*CELL_SIZE, HEIGHT*CELL_SIZE))
 rect_matrix = []
@@ -136,13 +130,6 @@ while True:
 				still_drawing=True
 				route = bfslabr([(start_point.y//CELL_SIZE, start_point.x//CELL_SIZE, [(start_point.y//CELL_SIZE, start_point.x//CELL_SIZE)])], (end_point.y//CELL_SIZE, end_point.x//CELL_SIZE))
 			
-
-		
-		# if event.type == pygame.KEYDOWN:
-		# 	if event.key == pygame.K_RETURN:
-		# 		if end_point and start_point:
-		# 			still_drawing = True
-		# 			route = bfslabr([(start_point.y//CELL_SIZE, start_point.x//CELL_SIZE, [(start_point.y//CELL_SIZE, start_point.x//CELL_SIZE)])], (end_point.y//CELL_SIZE, end_point.x//CELL_SIZE))
 	screen.fill(BACKGROUND_COLOR)
 
 	for y, line in enumerate(matrix): 
@@ -178,8 +165,6 @@ while True:
 				time.sleep(0.028)
 				pygame.display.update()
 
-
-	
 		still_drawing = False
 
 	pygame.display.update()
